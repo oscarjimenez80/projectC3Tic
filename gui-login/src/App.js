@@ -4,8 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Login from './components/login/Login'
 import Home from './components/home/Home'
-import Sales from './components/sales/Sales'
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import Sales from './components/Sales/Sale'
+import Product from './components/products/Products'
+
+import { Navbar, Nav, Container, Dropdown, NavItem, NavLink } from 'react-bootstrap';
+import SaleList from './components/Sales/SaleList';
+
 
 
 function App() {
@@ -15,11 +19,28 @@ function App() {
     <>
     <Navbar bg="primary" variant="dark">
     <Container>
-    <Navbar.Brand href="/sales">Ventas</Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link href="/clientes">Clientes</Nav.Link>
-      <Nav.Link href="/proveedores">Proveedores</Nav.Link>
-      <Nav.Link href="/usuarios">Usuarios</Nav.Link>
+
+    <Dropdown as={NavItem}>
+      <Dropdown.Toggle as={NavLink}>Ventas</Dropdown.Toggle>
+      <Dropdown.Menu>
+          <Dropdown.Item href="/sales">Nueva Venta</Dropdown.Item>
+          <Dropdown.Item href="/SalesList">Detalle de venta</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>;
+
+    <Dropdown as={NavItem}>
+      <Dropdown.Toggle as={NavLink}>Productos</Dropdown.Toggle>
+      <Dropdown.Menu>
+          <Dropdown.Item href="/Products">Gestion de Producto</Dropdown.Item>
+          <Dropdown.Item href="/Inventario">Inventario</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>;
+
+
+    <Nav.Link href="/usuarios">Usuarios</Nav.Link>
+    <Nav.Link href="/clientes">Clientes</Nav.Link>
+
     </Nav>
     <Nav>
       <Nav.Link href="/">Logout</Nav.Link>
@@ -32,6 +53,9 @@ function App() {
               <Route exact path='/' component={Login} />
               <Route exact path='/home' component={Home} />
               <Route exact path='/sales' component={Sales} />
+              <Route exact path='/SalesList' component={SaleList} />
+              <Route exact path='/Products' component={Product} />
+              
             </Switch>
       </Router>
     </>
