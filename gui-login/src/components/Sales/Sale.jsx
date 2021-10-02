@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import "./Sales.css";
 
-export default function Sales() {
+export default function Sale() {
     return (
         <div  className="Sales">
             
@@ -32,28 +32,6 @@ export default function Sales() {
             </Row>
 
 
-            <Row className="mb-3">
-                <Form.Group as={Col} controlId="formGridBarCode">
-                    <Form.Control type="text" placeholder="Código Barras" />
-                </Form.Group>
-
-                <Form.Group as={Col} controlId="formGridNomProd">
-                    <Form.Control type="text" placeholder="Nombre Producto" />
-                </Form.Group>
-
-                <Form.Group as={Col} controlId="formGridCanti">
-                    <Form.Control type="text" placeholder="Cantidad" />
-                </Form.Group>
-
-                <Form.Group as={Col} controlId="formGridVrUnit">
-                    <Form.Control type="email" placeholder="Valor unitario" />
-                </Form.Group>
-
-                <Form.Group as={Col} controlId="formGridVrToal">
-                    <Form.Control type="email" placeholder="Valor Total" />
-                </Form.Group>
-
-            </Row>
 
             <Form.Group className="mb-3" controlId="formGridAddress1">
                 <Form.Label>Address</Form.Label>

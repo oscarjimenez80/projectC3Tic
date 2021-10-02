@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Login from './components/login/Login'
 import Home from './components/home/Home'
-import Sales from './components/sales/Sales'
+import Sales from './components/Sales/Sale'
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
 
